@@ -15,6 +15,18 @@ public class DailyHabit extends Habit {
         }
     }
 
+    public DailyHabit(String name, LocalDate startDate, Category category, boolean defaultEntriesStatus) {
+        super(name, startDate, category);
+
+        LocalDate currentDate = LocalDate.now();
+        List<HistoryEntry> historyEntries = this.getHabitHistory();
+
+        while(!startDate.isAfter(currentDate)){
+            historyEntries.add(new HistoryEntry(defaultEntriesStatus, startDate));
+            startDate = startDate.plusDays(1);
+        }
+    }
+
     @Override
     public int calculateCurrentStreak() {
         int streak = 0;

@@ -17,6 +17,18 @@ public class WeeklyHabit extends Habit{
         }
     }
 
+    public WeeklyHabit(String name, LocalDate startDate, Category category, boolean defaultEntriesStatus) {
+        super(name, startDate, category);
+
+        LocalDate currentDate = LocalDate.now();
+        List<HistoryEntry> historyEntries = this.getHabitHistory();
+
+        while(!startDate.isAfter(currentDate)){
+            historyEntries.add(new HistoryEntry(defaultEntriesStatus, startDate));
+            startDate = startDate.plusDays(7);
+        }
+    }
+
     @Override
     public int calculateCurrentStreak() {
         int streak = 0;
@@ -31,5 +43,11 @@ public class WeeklyHabit extends Habit{
             }
         }
         return streak;
+    }
+
+    @Override
+    public void displayHabitHistory() {
+        //todo: display weekly habits differently
+        super.displayHabitHistory();
     }
 }

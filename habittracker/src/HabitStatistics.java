@@ -16,11 +16,13 @@ public interface HabitStatistics {
         return calculatePCT(historyEntries.size(), completeStatusCount);
     }
 
-    private double calculatePCT(int entriesCount, int completeStatusCount){
+    private double calculatePCT(int entriesCount, int completeStatusCount) {
         if (entriesCount == 0) {
             return 0.0;
         }
-        return completeStatusCount * (100.0 / entriesCount);
+        double percentage = completeStatusCount * (100.0 / entriesCount);
+        return Math.round(percentage * 100.0) / 100.0;
     }
+
 
 }

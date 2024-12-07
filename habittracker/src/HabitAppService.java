@@ -19,7 +19,17 @@ public class HabitAppService {
 
     public static void main(String[] args) {
         HabitAppService service = new HabitAppService();
+
+        service.createDemoData();
         service.beginApplication();
+    }
+
+    void createDemoData(){
+        Habit h1 = new DailyHabit("Brush teeth", LocalDate.now().minusDays(10), Category.HEALTH);
+        Habit h2 = new WeeklyHabit("Attend Yoga Class", LocalDate.now().minusWeeks(6), Category.FITNESS, true);
+
+        habits.add(h1);
+        habits.add(h2);
     }
 
     void beginApplication(){
