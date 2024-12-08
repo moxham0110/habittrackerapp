@@ -287,6 +287,8 @@ public class HabitAppService {
 
             if (datePresent){
                 System.out.println("Date status switched successfully!");
+                habit.displayHabitHistory();
+
             }else{
                 System.out.println("No habit entry found at provided date!");
             }

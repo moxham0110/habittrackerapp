@@ -34,12 +34,11 @@ public abstract class Habit implements HabitStatistics{
                     System.out.println("\n");
                 }
                 currentMonthYear = monthYear;
-                daysInMonth = date.lengthOfMonth();
                 firstDayOfWeek = date.withDayOfMonth(1).getDayOfWeek().getValue() % 7;
 
                 // Print the month header and calendar header
                 System.out.println("===== " + currentMonthYear + " =====");
-                System.out.println("Su Mo Tu We Th Fr Sa");
+                System.out.println("Sun Mon Tues Wed Thu Fri Sat");
 
                 // Print leading spaces for the first week
                 for (int i = 0; i < firstDayOfWeek; i++) {
