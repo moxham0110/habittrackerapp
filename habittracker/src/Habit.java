@@ -1,7 +1,6 @@
 import java.time.LocalDate;
 import java.time.format.TextStyle;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Locale;
 
 public abstract class Habit implements HabitStatistics{
@@ -10,7 +9,7 @@ public abstract class Habit implements HabitStatistics{
     private final int id;
     private String name;
     private ArrayList<HistoryEntry> habitHistory;
-    private Category category;    //todo: make category into enum, HEALTH, EDUCATION, CLEANING, OTHER
+    private Category category;
 
     public Habit(String name, LocalDate startDate, Category category) {
         this.id = Habit.idCount++;

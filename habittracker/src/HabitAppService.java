@@ -5,12 +5,6 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.function.Predicate;
 
-//todo: Percentage display
-//todo: demo data
-//todo: change the way a weekly habit is displayed
-//todo: default constructor this()
-//todo: report/demo
-
 public class HabitAppService {
     public Scanner scanner = new Scanner(System.in);
     public List<Habit> habits = new ArrayList<>();
